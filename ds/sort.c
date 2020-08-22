@@ -7,6 +7,13 @@
 //
 
 #include "sort.h"
+/**
+* cmp compare values
+* @a: value 1
+* @b: value 2
+* @sym: '>' or '<'
+*compare the values a and b according to the symbol
+ */
 bool cmp(elem_type a,elem_type b,char sym)
 {
     if(sym ==  '>')
@@ -15,7 +22,14 @@ bool cmp(elem_type a,elem_type b,char sym)
        return a<b ? true: false;
     return false;
 }
-void ble_sort(elem_type *arry ,uint8_t length,char symbol,bool (*cmp)(elem_type ,elem_type,char sym))
+/**
+* bubble_sort - bubble sort function.
+* @elem_elem_arry: Collection of all elements
+* @length: collection of all elements length
+* @symbol: '>' or '<'  ascending or descending order
+*complete the data ascending and descending sorting
+*/
+void bubble_sort(elem_type *elem_arry ,uint8_t length,char symbol,bool (*cmp)(elem_type ,elem_type,char sym))
 {
     uint8_t temp = 0,
             flag = 0,
@@ -24,15 +38,15 @@ void ble_sort(elem_type *arry ,uint8_t length,char symbol,bool (*cmp)(elem_type 
             post = 0,
             t_length =length -1;
     
-    if (!arry)
+    if (!elem_arry)
         return;
     for (i = 0; i < length-1; i++) {
         flag = 1;
         for (j = 0; j < t_length; j++) {
-            if (cmp(arry[j],arry[j+1],symbol)) {
-                temp = arry[j+1];
-                arry[j+1] = arry[j];
-                arry[j] = temp;
+            if (cmp(elem_arry[j],elem_arry[j+1],symbol)) {
+                temp = elem_arry[j+1];
+                elem_arry[j+1] = elem_arry[j];
+                elem_arry[j] = temp;
                 flag = 0;
                 post = j;
             }
@@ -45,7 +59,7 @@ void ble_sort(elem_type *arry ,uint8_t length,char symbol,bool (*cmp)(elem_type 
 #ifdef DUMP
     printf("data =");
     for (i =0; i<length; i++) {
-        printf(" %d ",arry[i]);
+        printf(" %d ",elem_arry[i]);
     }
     printf("\n");
 #endif

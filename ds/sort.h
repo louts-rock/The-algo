@@ -11,8 +11,8 @@
 #include <stdbool.h>
 #include <stdio.h>
 #define elem_type int
-
+/*
+ */
 bool cmp(elem_type a,elem_type b,char sym);
-void ble_sort(elem_type *arry ,uint8_t length,char symbol,bool (*cmp)(elem_type ,elem_type,char sym));
-
+void bubble_sort(elem_type *elem_arry ,uint8_t length,char symbol,bool (*cmp)(elem_type ,elem_type,char sym));
 #endif /* sort_h */
