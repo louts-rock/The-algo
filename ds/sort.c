@@ -7,6 +7,21 @@
 //
 
 #include "sort.h"
+
+
+/**
+* swap values
+* @a: value 1
+* @b: value 2
+* swap a and b
+ */
+void swap(elem_type *a,elem_type *b)
+{
+    elem_type temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
 /**
 * cmp compare values
 * @a: value 1
@@ -29,10 +44,9 @@ bool cmp(elem_type a,elem_type b,char sym)
 * @symbol: '>' or '<'  ascending or descending order
 *complete the data ascending and descending sorting
 */
-void bubble_sort(elem_type *elem_arry ,uint8_t length,char symbol,bool (*cmp)(elem_type ,elem_type,char sym))
+void bubble_sort(elem_type *elem_arry ,uint8_t length,order symbol,bool (*cmp)(elem_type ,elem_type,char sym))
 {
-    uint8_t temp = 0,
-            flag = 0,
+    uint8_t flag = 0,
             i = 0,
             j = 0,
             post = 0,
@@ -44,9 +58,7 @@ void bubble_sort(elem_type *elem_arry ,uint8_t length,char symbol,bool (*cmp)(el
         flag = 1;
         for (j = 0; j < t_length; j++) {
             if (cmp(elem_arry[j],elem_arry[j+1],symbol)) {
-                temp = elem_arry[j+1];
-                elem_arry[j+1] = elem_arry[j];
-                elem_arry[j] = temp;
+                swap(&elem_arry[j],&elem_arry[j+1]);
                 flag = 0;
                 post = j;
             }

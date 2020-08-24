@@ -9,10 +9,10 @@
 #include <stdio.h>
 #include "sort.h"
 
+
 int main(int argc, const char * argv[]) {
-    int temp[5]={2,1,4,7,3};
-    ble_sort(temp,5,'<',cmp);
-    printf("Hello, World!\n");
+    int a[6]={1,3,2,4,0,6};
+    bubble_sort(a, 6,descend, cmp);
     printf("Hello, World!\n");
     return 0;
 }
