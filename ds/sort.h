@@ -10,12 +10,20 @@
 #define sort_h
 #include <stdbool.h>
 #include <stdio.h>
-typedef enum {
-    ascend = '>',
-    descend = '<',
-}order;
+
+
+#define SWAP(a, b, size) \
+do{                            \
+    size_t __size = (size);                \
+    char *__a = (a), *__b = (b);        \
+    do{                \
+        char __tmp = *__a;                \
+        *__a++ = *__b;                    \
+        *__b++ = __tmp;                    \
+    } while (--__size > 0);                \
+} while (0)
+
 #define elem_type int
-void swap(elem_type *a,elem_type *b);
-bool cmp(elem_type a,elem_type b,char sym);
-void bubble_sort(elem_type *elem_arry ,uint8_t length,order symbol,bool (*cmp)(elem_type ,elem_type,char sym));
+void bubble_sort(void *base ,size_t length,size_t width,bool (*cmp)(const void * ,const void *));
+void select_sort(int arr[], int length);
 #endif /* sort_h */
