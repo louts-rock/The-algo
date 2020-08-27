@@ -10,8 +10,7 @@
 #define sort_h
 #include <stdbool.h>
 #include <stdio.h>
-
-
+#include "common.h"
 #define SWAP(a, b, size) \
 do{                            \
     size_t __size = (size);                \
@@ -23,7 +22,9 @@ do{                            \
     } while (--__size > 0);                \
 } while (0)
 
-#define elem_type int
-void bubble_sort(void *base ,size_t length,size_t width,bool (*cmp)(const void * ,const void *));
-void select_sort(int arr[], int length);
+
+typedef  bool (*cmp_func)(const void * ,const void *) ;
+typedef  void (*sort_func)(void *base ,size_t length,size_t size,cmp_func) ;
+
+
 #endif /* sort_h */

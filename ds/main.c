@@ -28,8 +28,12 @@ static bool cmp(const void *a,const void *b)
 
 int main(int argc, const char * argv[]) {
     int a[6]={1,3,2,4,0,6};
-    select_sort(a,6);
-    bubble_sort(a, 6,sizeof(int),cmp);
-    printf("Hello, World!\n");
+    //select_sort(a, 6,sizeof(int),cmp);
+    //bubble_sort(a, 6,sizeof(int),cmp);
+    printf("data =");
+    for (int i =0;i<6 ; i++) {
+        printf(" %d ",a[i]);
+    }
+    printf("\n");
     return 0;
 }

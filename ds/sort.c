@@ -14,28 +14,20 @@
 * @symbol: '>' or '<'  ascending or descending order
 *complete the data ascending and descending sorting
 */
-void bubble_sort(void *base ,size_t length, size_t width,bool (*cmp)(const void * ,const void *))
+static void bubble_sort(void *base ,size_t length, size_t size,cmp_func cmp)
 {
     uint8_t flag = 0,
             i = 0,
             j = 0,
             post = 0,
             t_length =length -1;
-    #define DUMP
-       #ifdef DUMP
-           printf("data =");
-           for (i =0; i<length; i++) {
-               printf(" %d ",*(int*)(base+i*width));
-           }
-           printf("\n");
-       #endif
     if (!base)
         return;
     for (i = 0; i < length-1; i++) {
         flag = 1;
         for (j = 0; j < t_length; j++) {
-            if (cmp(base+j*width,base+(j+1)*width)) {
-                SWAP(base+j*width,base+(j+1)*width,width);
+            if (cmp(base + j * size, base + (j + 1) * size)) {
+                SWAP(base + j * size, base + (j+1) * size, size);
                 flag = 0;
                 post = j;
             }
@@ -44,40 +36,30 @@ void bubble_sort(void *base ,size_t length, size_t width,bool (*cmp)(const void 
         if(flag)
             break;
     }
-    #define DUMP
-       #ifdef DUMP
-           printf("data =");
-           for (i =0; i<length; i++) {
-               printf(" %d ",*(int*)(base+i*width));
-           }
-           printf("\n");
-       #endif
+  
 }
-void select_sort(int arr[], int length)
+static void select_sort(void *base ,size_t length,size_t size,cmp_func cmp)
 {
-    for (int i = 0; i < length; i++){
-        int index = i;
-        for (int j = i+1; j < length; j++){
-            if (arr[j] < arr[index]){
+    uint8_t i ,j ;
+    for ( i = 0; i < length; i++){
+        uint8_t index = i;
+        for (j = i+1; j < length; j++){
+            if (cmp(base + j * size , base + index * size)){
                 index = j;
             }
         }
         if (index == i)
             continue;
         else{
-            int temp;
-            temp = arr[index];
-            arr[index] = arr[i];
-            arr[i] = temp;
-           }
-    }
-    #define DUMP
-    #ifdef DUMP
-        printf("data =");
-        for (int i =0; i<length; i++) {
-            printf(" %d ",arr[i]);
+            SWAP(base + index* size, base + i * size, size);
         }
-        printf("\n");
-    #endif
-
+    }
 }
+
+AlgorithmsType _sort_f ={
+    .name = "Sort",
+    .algorithm_mem_addr = select_sort,
+};
+
+
+

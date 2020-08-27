@@ -25,6 +25,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9F09D02124F7FEA1004A21FE /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
 		9FC6B28424EC0DAB00B2D006 /* ds */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ds; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC6B28724EC0DAB00B2D006 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		9FC6B28F24F1506600B2D006 /* sort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sort.h; sourceTree = "<group>"; };
@@ -68,6 +69,7 @@
 				9FC6B28F24F1506600B2D006 /* sort.h */,
 				9FC6B29224F267FF00B2D006 /* tree.h */,
 				9FC6B29324F2681200B2D006 /* tree.c */,
+				9F09D02124F7FEA1004A21FE /* common.h */,
 			);
 			path = ds;
 			sourceTree = "<group>";
