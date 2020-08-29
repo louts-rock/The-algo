@@ -13,7 +13,7 @@ typedef struct  AlgorithmsType{
     const char *name ;
     int flag ;
     void *data;
-    void *algorithm_mem_addr；
+    unsigned long algorithm_mem_addr;
 }AlgorithmsType;
 
 

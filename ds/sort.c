@@ -56,9 +56,13 @@ static void select_sort(void *base ,size_t length,size_t size,cmp_func cmp)
     }
 }
 
-AlgorithmsType _sort_f ={
-    .name = "Sort",
-    .algorithm_mem_addr = select_sort,
+AlgorithmsType s_sort_f ={
+    .name = "s_select",
+    .algorithm_mem_addr = (unsigned long)select_sort,
+};
+AlgorithmsType b_sort_f ={
+    .name = "s_bubble",
+    .algorithm_mem_addr = (unsigned long)bubble_sort,
 };
 
 

@@ -8,7 +8,8 @@
 
 #include <stdio.h>
 #include "sort.h"
-
+#include <stdlib.h>
+#include "linklist.h"
 /**
 * cmp compare values
 * @a: value 1
@@ -25,15 +26,19 @@ static bool cmp(const void *a,const void *b)
         return false;
         
 }
-
+extern AlgorithmsType b_sort_f;
+#if 1
 int main(int argc, const char * argv[]) {
-    int a[6]={1,3,2,4,0,6};
-    //select_sort(a, 6,sizeof(int),cmp);
-    //bubble_sort(a, 6,sizeof(int),cmp);
+    
+    
+    int a[11]={1,3,2,4,0,6,9,23,45,87,56};
     printf("data =");
-    for (int i =0;i<6 ; i++) {
+    sort_func fun =(sort_func)b_sort_f.algorithm_mem_addr;
+    fun(a,11,4,cmp);
+    for (int i =0;i<11 ; i++) {
         printf(" %d ",a[i]);
     }
     printf("\n");
     return 0;
 }
+#endif
