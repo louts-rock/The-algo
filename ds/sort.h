@@ -11,6 +11,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include "common.h"
+#include <stdlib.h>
 #define SWAP(a, b, size) \
 do{                            \
     size_t __size = (size);                \
@@ -21,6 +22,16 @@ do{                            \
         *__b++ = __tmp;                    \
     } while (--__size > 0);                \
 } while (0)
+
+#define VOL(a, b, size) \
+do{                            \
+    size_t __size = (size);                \
+    char *__a = (a), *__b = (b);        \
+    do{ \
+        *__a++ = *__b++;                   \
+    } while (--__size > 0);                \
+} while (0)
+
 
 
 typedef  bool (*cmp_func)(const void * ,const void *) ;

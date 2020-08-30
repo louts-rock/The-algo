@@ -20,20 +20,19 @@
 static bool cmp(const void *a,const void *b)
 {
     int val =(*(int*)a) - (*(int*)b);
-    if(val < 0)
+    if(val > 0)
         return true;
     else
         return false;
         
 }
-extern AlgorithmsType b_sort_f;
+extern AlgorithmsType i_sort_f;
 #if 1
 int main(int argc, const char * argv[]) {
     
     
     int a[11]={1,3,2,4,0,6,9,23,45,87,56};
-    printf("data =");
-    sort_func fun =(sort_func)b_sort_f.algorithm_mem_addr;
+    sort_func fun =(sort_func)i_sort_f.algorithm_mem_addr;
     fun(a,11,4,cmp);
     for (int i =0;i<11 ; i++) {
         printf(" %d ",a[i]);

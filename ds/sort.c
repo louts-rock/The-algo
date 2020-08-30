@@ -41,6 +41,8 @@ static void bubble_sort(void *base ,size_t length, size_t size,cmp_func cmp)
 static void select_sort(void *base ,size_t length,size_t size,cmp_func cmp)
 {
     uint8_t i ,j ;
+    if(!base)
+        return;
     for ( i = 0; i < length; i++){
         uint8_t index = i;
         for (j = i+1; j < length; j++){
@@ -56,6 +58,21 @@ static void select_sort(void *base ,size_t length,size_t size,cmp_func cmp)
     }
 }
 
+static void insert_sort(void *base,size_t length,size_t size,cmp_func cmp)
+{
+    char i,j;
+    void *cur = malloc(size);
+    if(!base)
+        return;
+    for(i =1 ; i<length;i++){
+        VOL(cur, base+i*(size), size);
+        for(j = i - 1;j>=0&& cmp(base+(j*size),cur);j--){
+            VOL(base+(j+1)*size, base+(j*size),size);
+        }
+        VOL(base+(j+1)*size,cur,size);
+    }
+}
+
 AlgorithmsType s_sort_f ={
     .name = "s_select",
     .algorithm_mem_addr = (unsigned long)select_sort,
@@ -63,6 +80,10 @@ AlgorithmsType s_sort_f ={
 AlgorithmsType b_sort_f ={
     .name = "s_bubble",
     .algorithm_mem_addr = (unsigned long)bubble_sort,
+};
+AlgorithmsType i_sort_f ={
+    .name = "s_insert",
+    .algorithm_mem_addr = (unsigned long)insert_sort,
 };
 
 
