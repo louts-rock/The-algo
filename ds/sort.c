@@ -7,13 +7,7 @@
 //
 
 #include "sort.h"
-/**
-* bubble_sort - bubble sort function.
-* @elem_elem_arry: Collection of all elements
-* @length: collection of all elements length
-* @symbol: '>' or '<'  ascending or descending order
-*complete the data ascending and descending sorting
-*/
+
 static void bubble_sort(void *base ,size_t length, size_t size,cmp_func cmp)
 {
     uint8_t flag = 0,
@@ -73,17 +67,31 @@ static void insert_sort(void *base,size_t length,size_t size,cmp_func cmp)
     }
 }
 
+static void show_version_i(void){
+    printf("s_insert 1.0\n");
+}
+static void show_version_s(void){
+    printf("s_select 1.0\n");
+}
+static void show_version_b(void){
+    printf("s_select 1.0\n");
+}
+
+
 AlgorithmsType s_sort_f ={
     .name = "s_select",
     .algorithm_mem_addr = (unsigned long)select_sort,
+    .version =show_version_s,
 };
 AlgorithmsType b_sort_f ={
     .name = "s_bubble",
     .algorithm_mem_addr = (unsigned long)bubble_sort,
+    .version =show_version_b,
 };
 AlgorithmsType i_sort_f ={
     .name = "s_insert",
     .algorithm_mem_addr = (unsigned long)insert_sort,
+    .version =show_version_i,
 };
 
 

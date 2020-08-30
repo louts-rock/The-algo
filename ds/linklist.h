@@ -12,6 +12,14 @@
 typedef struct list_head{
     struct list_head *prev,*next;
 }list_node;
+#ifdef offsetof
+#undef offsetof
+#define offsetof(TYPE, MEMBER) ((size_t) &((TYPE *)0)->MEMBER)
+#endif
+#define container_of(ptr, type, member) ({          \
+const typeof( ((type *)0)->member ) *__mptr = (ptr); \
+(type *)( (char *)__mptr - offsetof(type,member) );})
+
 
 #define INIT_LIST_HEAD(name) { &(name),&(name)}
 
@@ -70,6 +78,4 @@ static inline void list_delete(list_node *pos)
     pos->prev = NULL;
     
 }
-
-
 #endif /* linklist_h */

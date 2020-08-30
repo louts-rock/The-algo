@@ -10,6 +10,8 @@
 #include "sort.h"
 #include <stdlib.h>
 #include "linklist.h"
+#include "main.h"
+
 /**
 * cmp compare values
 * @a: value 1
@@ -26,14 +28,19 @@ static bool cmp(const void *a,const void *b)
         return false;
         
 }
-extern AlgorithmsType i_sort_f;
+
+
 #if 1
 int main(int argc, const char * argv[]) {
     
-    
     int a[11]={1,3,2,4,0,6,9,23,45,87,56};
-    sort_func fun =(sort_func)i_sort_f.algorithm_mem_addr;
-    fun(a,11,4,cmp);
+    at_register(&i_sort_f);
+    at_register(&b_sort_f);
+    at_register(&s_sort_f);
+    AlgorithmsType *p=at_find_by_name("s_select");
+    p->version();
+    sort_func sort =(sort_func)p->algorithm_mem_addr;
+    sort(a,11,4,cmp);
     for (int i =0;i<11 ; i++) {
         printf(" %d ",a[i]);
     }
