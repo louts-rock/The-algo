@@ -11,9 +11,11 @@
 #include "linklist.h"
 typedef struct  AlgorithmsType{
     const char *name ;
+    const char *long_name;
     int flag ;
     void *data;
     void (*version)(void);
+    void (*dump)(void *base,size_t size,size_t len,...);
     unsigned long algorithm_mem_addr;
     list_node list;
 }AlgorithmsType;

@@ -15,7 +15,7 @@ extern AlgorithmsType b_sort_f;
 extern AlgorithmsType i_sort_f;
 extern AlgorithmsType s_sort_f;
 
-static inline void  at_register(AlgorithmsType *Algorithms){
+static inline void  at_register_onec(AlgorithmsType *Algorithms){
         if(!Algorithms)
             return;
         list_add(&Algorithms->list,&at_head);

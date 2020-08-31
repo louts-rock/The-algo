@@ -68,29 +68,60 @@ static void insert_sort(void *base,size_t length,size_t size,cmp_func cmp)
 }
 
 static void show_version_i(void){
-    printf("s_insert 1.0\n");
+    printf("version: 1.0\n");
 }
 static void show_version_s(void){
-    printf("s_select 1.0\n");
+    printf("version: 1.0\n");
 }
 static void show_version_b(void){
-    printf("s_select 1.0\n");
+    printf("version 1.0\n");
+}
+
+#define ICMP(a,b) if(strcmp(a,b) == 0)
+static void dump_data(void *base,size_t size,size_t len,...)
+{
+    int count =0;
+    va_list pArgs;
+    va_start(pArgs, len);
+    char *par = va_arg(pArgs, char *);
+    va_end(pArgs);
+    ICMP(par,"%d"){
+        for (count = 0; count<len; count ++) {
+            printf(" %d ",*(int*)(base+count*size));
+        }
+    }
+    ICMP(par,"%x"){
+        printf("\n");
+        for (count = 0; count<len; count ++) {
+            printf(" %x ",*(int*)(base+count*size));
+        }
+        printf("\n");
+    }
+    ICMP(par,"%s"){
+        printf("%s\n",base);
+    }
 }
 
 
 AlgorithmsType s_sort_f ={
-    .name = "s_select",
+    .name = "SS",
+    .long_name ="SS :(select sort).",
     .algorithm_mem_addr = (unsigned long)select_sort,
+    .dump =dump_data,
     .version =show_version_s,
 };
 AlgorithmsType b_sort_f ={
-    .name = "s_bubble",
+    .name = "BS",
+    .long_name ="BS :(bubble sort).",
     .algorithm_mem_addr = (unsigned long)bubble_sort,
+    .dump =dump_data,
     .version =show_version_b,
 };
 AlgorithmsType i_sort_f ={
-    .name = "s_insert",
+    .name = "IS",
+    .long_name ="IS :(insert sort).",
     .algorithm_mem_addr = (unsigned long)insert_sort,
+    .dump =dump_data,
     .version =show_version_i,
 };
 

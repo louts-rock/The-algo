@@ -12,6 +12,8 @@
 #include <stdio.h>
 #include "common.h"
 #include <stdlib.h>
+#include <stdarg.h>
+#include <string.h>
 #define SWAP(a, b, size) \
 do{                            \
     size_t __size = (size);                \
