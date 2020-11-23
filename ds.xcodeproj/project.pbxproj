@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F94F26E256BEEF2001783C3 /* other.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F94F26D256BEEF2001783C3 /* other.c */; };
 		9FC6B28824EC0DAB00B2D006 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 9FC6B28724EC0DAB00B2D006 /* main.c */; };
 		9FC6B29124F15C7F00B2D006 /* sort.c in Sources */ = {isa = PBXBuildFile; fileRef = 9FC6B29024F15C7F00B2D006 /* sort.c */; };
 		9FC6B29424F2681200B2D006 /* tree.c in Sources */ = {isa = PBXBuildFile; fileRef = 9FC6B29324F2681200B2D006 /* tree.c */; };
+		9FFAF8C6253DD27F00870E9C /* kmp.c in Sources */ = {isa = PBXBuildFile; fileRef = 9FFAF8C5253DD27F00870E9C /* kmp.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +30,8 @@
 		9F09D02124F7FEA1004A21FE /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
 		9F09D02224F94409004A21FE /* linklist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = linklist.h; sourceTree = "<group>"; };
 		9F19475925032BA00006BA15 /* queue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = queue.h; sourceTree = "<group>"; };
+		9F94F26C256BEEF2001783C3 /* other.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = other.h; sourceTree = "<group>"; };
+		9F94F26D256BEEF2001783C3 /* other.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = other.c; sourceTree = "<group>"; };
 		9FC6B28424EC0DAB00B2D006 /* ds */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ds; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC6B28724EC0DAB00B2D006 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		9FC6B28F24F1506600B2D006 /* sort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sort.h; sourceTree = "<group>"; };
@@ -35,6 +39,8 @@
 		9FC6B29224F267FF00B2D006 /* tree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tree.h; sourceTree = "<group>"; };
 		9FC6B29324F2681200B2D006 /* tree.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = tree.c; sourceTree = "<group>"; };
 		9FD3E72E24FBE9110076C5DB /* main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
+		9FFAF8C4253DD25B00870E9C /* kmp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kmp.h; sourceTree = "<group>"; };
+		9FFAF8C5253DD27F00870E9C /* kmp.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = kmp.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,10 @@
 				9F09D02224F94409004A21FE /* linklist.h */,
 				9FD3E72E24FBE9110076C5DB /* main.h */,
 				9F19475925032BA00006BA15 /* queue.h */,
+				9FFAF8C4253DD25B00870E9C /* kmp.h */,
+				9FFAF8C5253DD27F00870E9C /* kmp.c */,
+				9F94F26C256BEEF2001783C3 /* other.h */,
+				9F94F26D256BEEF2001783C3 /* other.c */,
 			);
 			path = ds;
 			sourceTree = "<group>";
@@ -137,8 +147,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F94F26E256BEEF2001783C3 /* other.c in Sources */,
 				9FC6B29424F2681200B2D006 /* tree.c in Sources */,
 				9FC6B28824EC0DAB00B2D006 /* main.c in Sources */,
+				9FFAF8C6253DD27F00870E9C /* kmp.c in Sources */,
 				9FC6B29124F15C7F00B2D006 /* sort.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
